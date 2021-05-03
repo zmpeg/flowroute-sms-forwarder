@@ -12,13 +12,13 @@ First start the container running somewhere with a port open on the internet. In
     docker run \
       -p 80:4567 \
       -e FLOWROUTE_CALLBACK_PATH="/somstring" \
-      -e FLOWROUTE_FROM_DID="18001234567" \
-      -e FLOWROUTE_FORWARD_NUMBER="18007654321" \
+      -e FLOWROUTE_FROM_DID="<from-number>" \
+      -e FLOWROUTE_FORWARD_NUMBER="<to-number>" \
       -e FLOWROUTE_KEY="<keyid>" \
       -e FLOWROUTE_SECRET="<secret>" \
       -ti zmpeg/flowroute-sms-forwarder
   
-Second, setup the SMS webhook endpoint in Flowroute to point to the port of this container. You can set it in Flowroute under Preferences > API Control > [Webhooks](https://manage.flowroute.com/accounts/preferences/api/)
+Second, setup the SMS webhook endpoint in Flowroute to point to the port of this container. Be sure that you include the FLOWROUTE_CALLBACK_PATH. You can set the endpoint in Flowroute under Preferences > API Control > [Webhooks](https://manage.flowroute.com/accounts/preferences/api/)
 
 ### Environment Variables
 
