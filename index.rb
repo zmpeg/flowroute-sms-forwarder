@@ -17,7 +17,7 @@ post ENV["FLOWROUTE_CALLBACK_PATH"] do
   request.basic_auth(ENV["FLOWROUTE_KEY"], ENV["FLOWROUTE_SECRET"])
   request.content_type = "application/json"
   request.body = JSON.dump({
-    "to" => msg['from'],
+    "to" => ENV["FLOWROUTE_FORWARD_NUMBER"],
     "from" => ENV["FLOWROUTE_FROM_DID"],
     "body" => "#{msg['from']}: #{msg['body']}"
   })
