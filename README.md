@@ -17,15 +17,12 @@ First start the container running somewhere with a port open on the internet. In
       -e FLOWROUTE_SECRET="<secret>" \
       -ti zmpeg/flowroute-sms-forwarder
   
-Second, setup the webhook in Flowroute to point to the port of this container. You can set it in Flowroute under Preferences > API Control > [Webhooks](https://manage.flowroute.com/accounts/preferences/api/)
+Second, setup the SMS webhook endpoint in Flowroute to point to the port of this container. You can set it in Flowroute under Preferences > API Control > [Webhooks](https://manage.flowroute.com/accounts/preferences/api/)
 
 ### Environment Variables
 
-**FLOWROUTE_CALLBACK_PATH**
-The path for your API. I set this to a random string so that any webcrawler will not accidentally send me a text message.
-
-**FLOWROUTE_FROM_DID**
-The full DID in Flowroute which you want to send the textmessage from. This must be a phone number which you own.
-
-**FLOWROUTE_ID/FLOWROUTE_SECRET**
-The credentials for the Flowroute API. You can fetch them Flowroute under Preferences > [API Control](https://manage.flowroute.com/accounts/preferences/api/).
+| ENV Variable | Description |
+|--|--|
+| FLOWROUTE_FROM_DID | The full DID in Flowroute which you want to send the textmessage from. This must be a phone number which you own. |
+| FLOWROUTE_CALLBACK_PATH | The path for your API. I set this to a random string so that any webcrawler will not accidentally send me a text message. |
+| FLOWROUTE_ID<br>FLOWROUTE_SECRET | The credentials for the Flowroute API. You can fetch them Flowroute under Preferences > [API Control](https://manage.flowroute.com/accounts/preferences/api/). |
