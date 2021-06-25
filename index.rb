@@ -32,3 +32,7 @@ post ENV["FLOWROUTE_CALLBACK_PATH"] do
 
   'OK'
 end
+
+not_found do
+  '404'
+end
